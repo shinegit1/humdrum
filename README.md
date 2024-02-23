@@ -1,3 +1,10 @@
+## Humdrum Project
+A platform that offers unique challenges for personal growth, teamwork & creativity. Users can document their 
+experiences via images, text & audio logs, creating a personal diary. Here, you will explore new experiences, create 
+memories & unlock your potential.
+
+![Home Page](tasks/humdrum.jpg)
+
 ## Environment
 
 ### production
