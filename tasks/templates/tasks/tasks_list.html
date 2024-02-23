@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Challenges | MYxFATE {% endblock title %}
+{% block cssfile %}
+    <link rel="stylesheet" href=" {% static 'tasks/css/tasks_list.css' %} ">
+{% endblock cssfile %}
+{% block content %}
+<div class="challengeList">
+    <h1 class="challengeTitle">Challenges:</h1>
+    <div class="challenges">
+        <table class="table">
+            {% for challenge in object_list %}
+                <tbody>
+                    <tr>
+                        <td> <i class="fa-solid fa-angles-right"></i> </td>
+                        <td> <h5>{{challenge.description}}</h5> </td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+        
+    </div>
+</div>
+{% endblock content %}

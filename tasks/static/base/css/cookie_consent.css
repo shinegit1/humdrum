@@ -1,0 +1,42 @@
+.theme_funky {
+    --cc-bg: #f9faff;
+    --cc-text: #190326;
+    --cc-btn-primary-bg: rgb(49, 11, 70);
+    --cc-btn-primary-text: var(--cc-bg);
+    --cc-btn-primary-hover-bg: rgb(36, 4, 53);
+    --cc-btn-secondary-bg:#d8b1ee;
+    --cc-btn-secondary-text: var(--cc-text);
+    --cc-btn-secondary-hover-bg: rgb(217, 156, 247);
+    --cc-toggle-bg-off: #e1c8ef;
+    --cc-toggle-bg-on: #190326;
+    --cc-toggle-bg-readonly: #cbd8f1;
+    --cc-toggle-knob-bg: #fff;
+    --cc-toggle-knob-icon-color: #ecf2fa;
+    --cc-block-text: var(--cc-text);
+    --cc-cookie-category-block-bg: #ebeff9;
+    --cc-cookie-category-block-bg-hover: #dbe5f9;
+    --cc-section-border: #f1f3f5;
+    --cc-cookie-table-border: #e1e7f3;
+    --cc-overlay-bg: rgba(230, 235, 255, .85);
+    --cc-webkit-scrollbar-bg: #ebeff9;
+    --cc-webkit-scrollbar-bg-hover: #190326;
+}
+
+.theme_funky #c-ttl{
+    color: var(--cc-btn-primary-bg);
+}
+.theme_funky .cc_div #c-inr{
+    width: 100%;
+}
+/* Custom border radius */
+.theme_funky #cm,
+.theme_funky #s-bl .act .b-acc,
+.theme_funky #s-inr,
+.theme_funky .cc_div .b-tl,
+.theme_funky .cc_div .c-bl{
+    border-radius: 1.2em;
+}
+
+.theme_funky .cc_div .c-bn{
+    border-radius: .7em;
+}

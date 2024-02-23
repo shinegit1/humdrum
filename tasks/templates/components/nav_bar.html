@@ -1,0 +1,52 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a href="{% url 'tasks:HomePage' %}" class="navbar-brand">
+            <img class="logoIcon" src="{% static 'tasks/images/icon.png' %}" alt="icon" >
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="{% url 'tasks:HomePage' %}" class="btn whiteButton">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <a href="{% url 'tasks:TaskList' %}" class="btn whiteButton">
+                    <i class="fa-solid fa-rectangle-list"></i> Challenges
+                </a>
+                {% if request.user.is_authenticated %}  <!-- if user logged in-->
+                    <a href="{% url 'tasks:MyExperiences' page_number=1 %}" class="btn whiteButton">
+                        <i class="fa-brands fa-envira"></i> My Experiences
+                    </a>
+                    </div>
+                    <div class="navbar-nav dropdown ms-auto">
+                        <a href="#" class="dropdown-toggle btn whiteButton" data-bs-toggle="dropdown" tabindex="-1"
+                        ><i class="fa-solid fa-address-card"></i> {{ request.user.username }}</a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="{% url 'tasks:LogoutPage' %}" class="dropdown-item">
+                                    Log Out</a>
+                            </div>     
+                    </div>
+                {% else %}
+                    </div>
+                    <div class="navbar-nav ms-auto">
+                        {% url 'tasks:LoginPage' as login %}
+                        {% url 'tasks:SignupPage' as signup %}
+                        {% if request.path == signup %}
+                            <a href="{% url 'tasks:LoginPage' %}" class="btn whiteButton" tabindex="-1">
+                                Login</a>
+                        {% elif request.path == login %}
+                            <a href="{% url 'tasks:SignupPage' %}" class="btn whiteButton" tabindex="-1">
+                                Signup</a>
+                        {% else %}
+                            <a href="{% url 'tasks:LoginPage' %}" class="btn whiteButton" tabindex="-1">
+                                Login</a>
+                            <a href="{% url 'tasks:SignupPage' %}" class="btn whiteButton" tabindex="-1">
+                                Signup</a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+        </div>
+    </div>
+</nav>

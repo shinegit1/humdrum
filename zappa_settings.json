@@ -1,0 +1,38 @@
+{
+    "dev": {
+        "aws_region": "us-east-1",
+        "django_settings": "humdrum.settings.settings_dev",
+        "profile_name": null,
+        "manage_roles": false, 
+        "role_name": "humdrum_zappa_role",
+        "role_arn": "arn:aws:iam::xxxxxxxx:role/humdrum_zappa_role",
+        "project_name": "humdrum",
+        "runtime": "python3.9",
+        "exclude": [".pytest_cache", "db.sqlite3"],
+        "exclude_glob": ["*.pyc", "*.rar", "tasks/tests/*", "media/*"],
+        "s3_bucket": "humdrum-code-data",
+        "vpc_config" : {
+            "SubnetIds": [ "subnet-xxxxxxxxx", "subnet-xxxxxxxxxxx"],
+            "SecurityGroupIds": [ "sg-xxxxxxxx","sg-xxxxxxxxxxx"]
+        }
+    },
+    "prod": {
+        "aws_region": "us-east-1",
+        "django_settings": "humdrum.settings.settings_prod",
+        "profile_name": null,
+        "manage_roles": false,
+        "role_name": "humdrum_zappa_role",
+        "role_arn": "arn:aws:iam::xxxxxxxxx:role/humdrum_zappa_role",
+        "project_name": "humdrum",
+        "runtime": "python3.9",
+        "exclude": [".pytest_cache", "db.sqlite3"],
+        "exclude_glob": ["*.pyc", "*.rar", "tasks/tests/*", "media/*"],
+        "s3_bucket": "humdrum-code-data",
+        "vpc_config" : {
+            "SubnetIds": [ "subnet-xxxxxxxxx", "subnet-xxxxxxxxxx"],
+            "SecurityGroupIds": [ "sg-xxxxxxxxx","sg-xxxxxxxxxxx"]
+        },
+        "certificate_arn": "arn:aws:acm:us-east-1:xxxxxxxxx:certificate/xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+        "domain": "www.xxxxx.com"
+    }
+}

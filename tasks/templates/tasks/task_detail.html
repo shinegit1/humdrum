@@ -1,0 +1,59 @@
+{% extends 'base/task_base.html' %}
+{% load static %}
+{% load i18n %}
+{% load comments %}
+{% load comments_xtd %}
+{% block title %} Challenge | MYxFATE {% endblock title %}
+{% block uploadbtn %}
+{% if is_task_assigned %}
+<a class="btn whiteButton" id="SaveData" role="button"
+   href="{% url 'tasks:SubmitData' task_history_id=task_history.id %}">Share Experience
+</a>
+{% endif %}
+{% endblock uploadbtn %}
+
+{% block comments %}
+    <div class="commentDiv">
+        {% get_comment_count for task as comment_count %}
+        <button class="btn whiteButton" id="ShowCommentButton" onclick="show_comments()">
+            Show ({{comment_count}}) Comments &nbsp; <i class="fa-solid fa-angle-down"></i>
+        </button>
+
+        <!-- it will be hide comment list until click on button -->
+        <div id="CommentBox">
+            <div class="row">
+                <span class="badge commentHead">
+                    <button class="btn purpleButton"
+                            onclick="hide_comments();">Hide ({{comment_count}}) Comments</button>
+                    <a class="btn purpleButton" onclick="go_to_textarea(this.id)" id="JoinButton">join Discussion</a>
+                </span>
+            </div> <br>
+
+            <div class="commentsList">
+                {% if comment_count %}
+                    {% render_xtdcomment_tree for task allow_feedback allow_flagging %}
+                {% else %}
+                    <p class="text-center text-muted">No comments yet.</p>
+                {% endif %}
+            </div>
+            <br>
+            <div class="commentForm">
+                {% get_comment_form for task as form %}
+                <form action="{% comment_form_target %}" method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {% if field.is_hidden %}
+                        <div>{{ field }}</div>
+                    {% endif %}
+                    {% endfor %}
+                    {{form.comment}} <br>
+                    <input type="hidden" name="next" value="{{ task.get_absolute_url }}"/>
+                    <input class="btn whiteButton" type="submit" value="comment">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock comments %}
+{% block jsfile %}
+<script src="{% static 'tasks/js/task_detail.js' %}"></script>
+{% endblock jsfile %}

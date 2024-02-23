@@ -1,0 +1,100 @@
+/* login form popup css */
+.wrapper {
+  width: 40%;
+  background-color: #fff;
+  margin: 2.4em auto;
+  border-radius: 15px;
+  border: 3px solid #a84ede;
+}
+
+.wrapper .titleDiv {
+  font-weight: 400;
+  text-align: center;
+  line-height: 80px;
+  color: #fff;
+  user-select: none;
+  border-radius: 12px 12px 0 0;
+  background-image: linear-gradient(180deg, #5a237a, #4c1e85, #393061);
+}
+
+.wrapper form {
+  padding: 10px 30px 30px 10px;
+}
+
+.wrapper .input-group-text{
+  height: 100%;
+  border: 1px solid #c675f6;
+  color: #290b3a;
+
+}
+
+.wrapper form .formField input {
+  height: 100%;
+  width: 50%;
+  outline: none;
+  font-size: 15px;
+  border: 1px solid #c675f6;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.wrapper form .formField input:focus, form .formField input:valid {
+  border-color: #3754e7;
+}
+
+.wrapper form .formField label {
+  color: #471a62;
+  font-size: 14px;
+  font-weight: 600;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+form .formField input:focus ~ label,
+form .formField input:valid ~ label {
+  top: 0%;
+  font-size: 16px;
+  color: #4158d0;
+  background-color: #fff;
+  padding: 5px;
+  transform: translateY(-40%);
+}
+
+form .resetPasswordUrl {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+form .formField input[type="submit"]:active {
+  transform: scale(0.95);
+}
+
+form .signup-link {
+  color: #262626;
+  margin-top: 20px;
+}
+
+form .pass-link a,
+form .signup-link a {
+  font-size: 14px;
+  font-weight: bold;
+  color: #25186e;
+  text-decoration: none;
+}
+
+form .pass-link a:hover,
+form .signup-link a:hover {
+  text-decoration: underline;
+}
+
+#ErrorNotification{
+    font-size: 12px;
+}
+
+@media screen and (max-width: 991px) {
+  .wrapper{
+    width: 90%;
+  }
+
+}

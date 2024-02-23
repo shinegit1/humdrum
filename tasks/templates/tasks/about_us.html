@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} About Us | MYxFATE {% endblock title %}
+{% block cssfile %}
+    <link rel="stylesheet" href="{% static 'tasks/css/about_us.css' %}">
+{% endblock cssfile %}
+{% block content %}
+<div class="container">
+    <div class="aboutUsBox">
+        <h1 class="titleBox">  About Us </h1>
+        <div class="dataDiv">
+            <p>Our mission is to provide a platform for individuals to challenge themselves, explore new experiences, and create lifelong memories with their friends and family. We offer unique and engaging 
+                activities that are accessible to people of all ages and backgrounds, and that promote personal growth, teamwork, communication, and creativity. Through our offerings, we strive to inspire 
+                individuals to embrace their sense of adventure and to build stronger connections with their loved ones through shared experiences.
+            </p>
+            <h6>For any suggestions or questions:</h6>
+            <a href = "mailto: support@myxfate.com">support@myxfate.com</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

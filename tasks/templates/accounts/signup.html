@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}SignUp | MYxFATE {% endblock title %}
+{% block cssfile %}
+    <link rel="stylesheet" href="{% static 'tasks/css/signup.css' %}">
+{% endblock cssfile %}
+
+{% block content %}
+<div class="container">
+    <div class="signupBox">
+        <h1 class="titleBox">  Join Us </h1>
+        <form action="" method="post" autocomplete='off' novalidate enctype="multipart/form-data"> {% csrf_token %}
+            <div class="row g-3 ms-4">
+                <div class="col-md-6">
+                    {{form.username.label_tag}}
+                    <div class="input-group mb-3 mt-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="GenericFormIcon">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </div>
+                        {{form.username}}
+                    </div>
+                    <small class='text-danger'>{{form.username.errors|striptags}}</small>
+                </div>
+                <div class="col-md-6">
+                    {{form.email.label_tag}}
+                    <div class="input-group mb-3 mt-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="GenericFormIcon1">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                        </div>
+                        {{form.email}}
+                    </div>
+                    <small class='text-danger'>{{form.email.errors|striptags}}</small>
+                </div>
+                <div class="col-md-6">
+                    {{form.password1.label_tag}}
+                    <div class="input-group mb-3 mt-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="LockIcon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </div>
+                        {{form.password1}}
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="EyeIcon" onclick="password1_show_hide()">
+                                <i class="fa-solid fa-eye" id="ShowEye"></i>
+                                <i class="fa-solid fa-eye-slash" id="HideEye"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <small class='text-danger'>{{form.password1.errors|striptags}}</small>
+                </div>
+                <div class="col-md-6">
+                    {{form.password2.label_tag}}
+                    <div class="input-group mb-3 mt-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="LockIcon1">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </div>
+                        {{form.password2}}
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="EyeIcon1" onclick="password2_show_hide()">
+                                <i class="fa-solid fa-eye" id="ShowEye2"></i>
+                                <i class="fa-solid fa-eye-slash" id="HideEye2"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <small class='text-danger'>{{form.password2.errors|striptags}}</small>
+                </div>
+
+                <button type="submit" class="btn purpleButton">Submit</button>
+            </div>
+            {% include 'components/form_error.html' %}
+        </form>
+    </div>
+</div>
+{% endblock content %}
+{% block jsfile %}
+<script src="{% static 'tasks/js/login_signup.js' %}"></script>
+{% endblock jsfile %}

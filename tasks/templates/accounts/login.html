@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}LogIn | MYxFATE {% endblock title %}
+{% block cssfile %}
+<link rel="stylesheet" href="{% static 'tasks/css/login.css' %}">{% endblock cssfile %}
+{% block content %}
+<!--popup login div here-->
+<div class="container">
+    <div class="wrapper">
+        <h1 class="titleDiv"> Login Form </h1>
+        <form action="" method="post" novalidate> {% csrf_token %}
+            <div class="row ms-4 formField">
+                <div class="col-md-12"> <!-- for username-->
+                    {{form.username.label_tag}}
+                    <div class="input-group mb-2 mt-2">
+                        <div class="input-group-prepend">
+                                <span class="input-group-text" id="GenericFormIcon">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                        </div>
+                        {{form.username}}
+                    </div>
+                    <small class='text-danger'>{{form.username.errors|striptags}}</small>
+                </div>
+                <div class="col-md-12"> <!-- for password-->
+                    {{form.password.label_tag}}
+                    <div class="input-group mb-2 mt-2">
+                        <div class="input-group-prepend">
+                                <span class="input-group-text" id="LockIcon">
+                                    <i class="fas fa-lock"></i></span>
+                        </div>
+                        {{form.password}}
+                        <div class="input-group-append">
+                                <span class="input-group-text" id="EyeIcon" onclick="password_show_hide()">
+                                    <i class="fa-solid fa-eye" id="ShowEye"></i>
+                                    <i class="fa-solid fa-eye-slash" id="HideEye"></i>
+                                </span>
+                        </div>
+                    </div>
+                    <small class='text-danger'>{{form.password.errors|striptags}}</small>
+                </div>
+            </div>
+            <div class="resetPasswordUrl">
+                <div class="pass-link">
+                    <a href="{% url 'tasks:password_reset' %}">Forgot password?</a>
+                </div>
+                <button class="btn purpleButton" type="submit" value="login">Login</button>
+            </div>
+
+            <div class="ms-4 signup-link">
+                Not a member? <a href="{% url 'tasks:SignupPage' %}">Signup now</a>
+            </div>
+            {% include 'components/form_error.html' %}
+        </form>
+    </div>
+</div> <!--close login popup-->
+{% endblock content %}
+{% block jsfile %}
+<script src="{% static 'tasks/js/login_signup.js' %}"></script>
+{% endblock jsfile %}

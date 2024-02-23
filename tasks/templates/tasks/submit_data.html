@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Save Experiences | MYxFATE {% endblock title %}
+{% block cssfile %}
+<link rel="stylesheet" href="{% static 'tasks/css/submit_data.css' %}">
+{% endblock cssfile %}
+
+{% block content %}
+<!--Upload popup upload file div here-->
+<div class="uploadExperience">
+    <h1 class="titleDiv">Save Your Experiences</h1>
+    <form name="SaveData" method="post" action="" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        <div class="row uploadData">
+
+            <div class="choiceData">
+                <input type="radio" name="textEditor" id="TextData" onclick="showText()">
+                <label for="TextData">Type in text</label> <br>
+                <input type="radio" name="textEditor" id="FileData" onclick="showFile()">
+                <label for="FileData">Share a file</label>
+            </div>
+
+            <!-- popup file upload div here-->
+            <div id="UploadFileData">
+                {{ form.file_data.label_tag }} <br> <br>
+                <span class="dragBox"> {{ form.file_data }} </span>
+                <div class="exampleFile">
+                    <strong>Accepted Files:
+                        <b>(Images:</b> jpeg, png, jpg),
+                        <b>(Audio:</b> mp3, ogg, wav)<br>
+                        Max File Size: 10 MB
+                    </strong>
+                </div>
+            </div>
+
+            <!-- popup text div here -->
+            <div id="UploadTextData">
+                {{ form.text_data.label_tag }} <br> <br>
+                {{ form.text_data }}
+                <small class='text-warning'>{{ form.text_data.errors|striptags }}</small> <br>
+                <br>
+            </div>
+
+        </div>
+
+        {# Show form validation error #}
+        {% include 'components/form_error.html' %}
+
+        <button type="submit" value="submit" class="btn purpleButton">Submit</button>
+
+    </form>
+</div>
+{% endblock content %}
+{% block jsfile %}
+<script src="{% static 'tasks/js/submit_data.js' %}"></script>
+{% endblock jsfile %}

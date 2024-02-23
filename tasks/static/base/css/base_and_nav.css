@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+/* Naming for classes and ids
+    snake case: are Bootstrap class
+    camelCase: use for CLASS name
+    PascalCase: use for ID name
+ */
+html {
+    word-spacing: 0.3em;
+    font-size: 16px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(180deg, #160124, #150a25, #1c0729);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right top;
+    margin: 0;
+    position: relative;
+    font-weight: bold;
+    color: #dfd4e5;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100%;
+    padding-bottom: 3rem;
+    box-sizing: inherit;
+}
+
+#MainBody {
+    margin: 20px 80px 20px 80px;
+    position: relative;
+    transition: 0.6s;
+    height: auto;
+}
+
+.navbar{
+    background-color: transparent;
+}
+
+.navbar-toggler, navbar-toggler-icon{
+    background-color: white;
+}
+
+.navbar a{
+    margin-left: 12px;
+}
+
+.navbar-brand{
+    color: white;
+}
+
+.dropdown-menu, .dropdown-item{
+    background-color: rgb(215, 200, 224);
+    color: #190326;
+    font-weight: 600;
+    width: auto;
+}
+
+.dropdown-item:hover, .dropdown-item:active{
+    background-color: rgb(202, 180, 214);
+    width: 85%;
+    color: #190326;
+    border-radius: 5px;
+}
+.logoIcon{
+    width:45px;
+    height: 40px;
+}
+
+footer{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: right;
+    font-size: 11px;
+    font-weight: lighter;
+    color: rgb(163, 162, 163);
+    word-spacing: 0.1em;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+.policy, .policy:hover{
+    text-decoration: underline;
+    background-color: transparent;
+    font-size: 10px;
+    border: none;
+    padding: 1px 5px;
+    border-radius: 2px;
+    color: rgb(188, 187, 189);
+}
+
+.copyRight, .copyRight:hover{
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(188, 187, 189);
+}
+
+@media screen and (min-width: 1399px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #MainBody {
+        margin: 0;
+    }
+    .collapse{
+        background-color: rgb(215, 200, 224);
+        border-radius: 10px;
+        margin-top: 1.2em;
+        color: #190326;
+    }
+    .navbar a{
+        text-align: left;
+        margin-left: 0;
+        box-shadow: none;
+        border: none;
+    }
+    .navbar-collapse a:hover{
+        background-color: #280b3a;
+        border-radius: 10px;
+        color: rgb(215, 200, 224);
+    }
+    .dropdown-item:hover{
+        width: 100%;
+        color: white;
+    }
+    .logoIcon{
+        margin-left: 10px;
+    }
+}
+
