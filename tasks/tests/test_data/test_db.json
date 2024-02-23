@@ -1,0 +1,118 @@
+[
+  {
+    "model": "tasks.customuser",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$nB6yO7M3nHx9wgbpwUlnvY$MvBUbTIBJ05C9/ro6vFZVgED5xWuQj3j/5vKXaKgNfs=",
+      "last_login": "2022-10-31T17:58:29.209Z",
+      "is_superuser": false,
+      "username": "user1",
+      "first_name": "",
+      "last_name": "",
+      "email": "user@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-10-31T17:58:16.983Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "tasks.customuser",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$nB6yO7M3nHx9wgbpwUlnvY$MvBUbTIBJ05C9/ro6vFZVgED5xWuQj3j/5vKXaKgNfs=",
+      "last_login": "2022-10-31T17:58:29.209Z",
+      "is_superuser": false,
+      "username": "taskuser",
+      "first_name": "",
+      "last_name": "",
+      "email": "taskuser@gmail.com",
+      "is_staff": false,
+      "is_active": false,
+      "date_joined": "2022-10-11T17:43:16.983Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 1,
+    "fields": {
+      "description": "Plant a tree.",
+      "tips": "1. Buy the plant from a local nursery or from online shops. \r\n2. Make sure to water the plant daily.",
+      "created_date": "2022-10-31"
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 2,
+    "fields": {
+      "description": "Live one day without your phone.",
+      "tips": "Give your phone to your trusted friend, relative or hide it in a locker.\r\nMake sure that you are in a safe environment before proceeding with this task.",
+      "created_date": "2022-10-31"
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 3,
+    "fields": {
+      "description": "Test Description.",
+      "tips": "Test tips.\r\nMake sure that you are in a safe environment before proceeding with this task.",
+      "created_date": "2022-10-31"
+    }
+  },
+  {
+    "model": "tasks.taskshistory",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "task": 1,
+      "submitted_date": "2022-10-31T17:59:56.961Z",
+      "status": "COMPLETED",
+      "assigned_date": "2022-10-31T17:58:17.418Z"
+    }
+  },
+  {
+    "model": "tasks.taskshistory",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "task": 2,
+      "submitted_date": null,
+      "status": "ASSIGNED",
+      "assigned_date": "2022-10-31T17:59:56.970Z"
+    }
+  },
+  {
+    "model": "tasks.taskshistory",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "task": 3,
+      "submitted_date": "2022-10-31T17:59:56.961Z",
+      "status": "COMPLETED",
+      "assigned_date": "2022-10-31T17:58:17.418Z"
+    }
+  },
+  {
+    "model": "tasks.taskshistorydata",
+    "pk": 1,
+    "fields": {
+      "task_history": 1,
+      "file_data": "63b9a93f.txt",
+      "file_type": "TEXT",
+      "date_created": "2022-10-31T17:59:56.947Z"
+    }
+  },
+  {
+    "model": "tasks.taskshistorydata",
+    "pk": 2,
+    "fields": {
+      "task_history": 3,
+      "file_data": "abb9a93f.jpg",
+      "file_type": "IMAGE",
+      "date_created": "2022-10-31T17:59:56.947Z"
+    }
+  }
+]

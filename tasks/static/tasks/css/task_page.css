@@ -1,0 +1,157 @@
+/* classses use in task_base page */
+.challenge {
+    padding: 20px;
+    font-size: 20px;
+    width: 80%;
+    height: auto;
+    margin: 2.2em auto;
+    display: block;
+}
+
+.challengeDescription {
+    font-weight: 500;
+    width: auto;
+}
+.challengeButton{
+    text-align: center;
+}
+
+/* tips div css */
+.challengeTips {
+    height: auto;
+    margin: 2.2em auto;
+    font-weight: lighter;
+    width: 100%;
+    text-align: left;
+}
+
+.challengeTips ol {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    font-size: 18px;
+    list-style-position: inside;
+}
+
+.challengeTips ol li {
+    padding: 5px;
+}
+/* id use for share experiences button */
+#SaveData{
+    position: relative;
+    margin: 2.2em auto;
+} 
+
+/* classes use in task_detail page */
+.commentDiv{
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    margin: auto;
+}
+#ShowCommentButton {
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+.commentHead{
+    font-size: 1.5em;
+    color: #190326;
+    background-color: rgb(193, 189, 197);
+}
+
+#CommentBox{
+    width: 100%;
+    margin: auto;
+    height: auto;
+    display: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#CommentBox form {
+    width: auto;
+}
+.commentsList{
+    width: 100%;
+    height: auto;
+}
+/* submitButton class inherited from for_multiple_pages.css file */
+
+.userComment h5 {
+    color: rgb(131, 131, 133);
+}
+
+.commentDescription{
+    font-weight: 200;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+.nestedComments{
+    font-size: 12px;
+    cursor: pointer;
+    width: auto;
+}
+
+.childrenComments {
+    margin-left: 50px;
+    padding-left: 10px;
+    display: none;
+    border-left: 1px dotted rgb(161, 160, 161);
+}
+.replyAndFlag{
+    display: block;
+    width: auto;
+    padding: 2px 5px 2px 20px;
+}
+.replyAndFlag, .replyAndFlag a, .fa-flag {
+    font-size: 14px;
+    color: rgb(161, 160, 161);
+    text-decoration: none;
+    font-weight: lighter;
+}
+.replyAndFlag a:hover{
+    color: white;
+}
+
+.errorPage {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+}
+
+@media screen and (max-width:990px) {
+    .challenge{
+        width: 90%;
+    }
+    .commentDiv {
+        width: 100%;
+    }
+    #ShowCommentButton {
+        width: 100%;
+    }
+    #CommentBox textarea{
+        width: 100%;
+    }
+    .commentText{
+        font-size: 12px;
+        padding-left: 5px;
+    }
+    .feedback, .childrenComments{
+        padding-left: 5px;
+    }
+    .childrenComments{
+        margin-left: 20px;
+    }
+    #CommentBox input[type='submit'] {
+        padding: 1px 10px;
+        height: 40px;
+        font-size: 12px;
+    }
+    .replyAndFlag, .replyAndFlag a, .fa-flag {
+    font-size: 12px;
+    }
+}

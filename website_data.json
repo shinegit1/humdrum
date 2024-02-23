@@ -1,0 +1,116 @@
+[
+  {
+    "model": "tasks.task",
+    "pk": 1,
+    "fields": {
+      "description": "Challenge yourself to a technology detox and refrain from using any screens, including phones, laptops, and computers, for an entire day.",
+      "tips": "* Make a list of the tasks you need to complete during the day, and think about alternative ways to accomplish them without using technology.\r\n* Spend time with friends and family to keep yourself occupied or practice mindfulness or meditate.\r\n* Give your phone/laptop/pc to your trusted friends/family/partner or store them in a locker.\r\n* [Educate yourself](https://amzn.to/3LgUzv4) about the side effects of using phone/laptop/pc excessively.",
+      "created_date": "2023-03-11"
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 2,
+    "fields": {
+      "description": "Take the first step towards creating a sustainable and eco-friendly environment by planting a beautiful and thriving shrub, herb, or tree.",
+      "tips": "* Either choose something that you already like or something from this [selection](https://amzn.to/3mIBuaH).\r\n* Select a spot with enough space for the plant to grow, and make sure it gets adequate sunlight. If it is a tree, then make sure that it is far from power lines or buildings.\r\n* Water the plant immediately after planting and regularly thereafter to help it establish roots.\r\n* Monitor the tree regularly and provide [proper care](https://amzn.to/3J9m1bd), including regular watering, pruning, and fertilizing, as needed.",
+      "created_date": "2023-03-11"
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 3,
+    "fields": {
+      "description": "Challenge yourself to sprint 1 km in the least possible time.",
+      "tips": "* Start with a warm-up by doing some light stretching, jumping jacks, or a quick walk to get your blood flowing and your muscles ready for exercise and after running, do some light stretching or a slow walk to cool down.\r\n* Breathing is essential when running. Try to breathe in rhythm with your steps, taking deep breaths through your nose and exhaling through your mouth.\r\n* It's important to drink water before, during, and after your run to keep your body hydrated. Make sure to have a bottle of water with you or plan your route near a water fountain.\r\n* Good running form is essential to prevent injury and [improve performance](https://amzn.to/3YJH1uS). Make sure to keep your shoulders relaxed, your arms bent at a 90-degree angle, and your feet landing softly on the ground.",
+      "created_date": "2023-03-11"
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 4,
+    "fields": {
+      "description": "Let your imagination run wild by reading a novel from any genre that captivates your mind and heart.",
+      "tips": "* Choose a book that interests you or pick something from this [selection](https://amzn.to/3mAC1LK).\r\n* As you read, try to visualize the characters, settings, and events in your mind. This will help bring the story to life and make it more engaging.\r\n* Don't feel pressured to finish the book in a certain amount of time. Take your time and enjoy the journey.\r\n* Talking about the book with friends, family, or book clubs can enhance your reading experience and deepen your understanding of the story.",
+      "created_date": "2023-03-11"
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 5,
+    "fields": {
+      "description": "Put your drawing skills to the test and challenge yourself to create a realistic portrait of yourself.",
+      "tips": "* Begin by drawing the basic shapes of your face, such as the outline of your head, the placement of your eyes, nose, and mouth. This will help you to build a [foundation](https://amzn.to/3LgfONx) for your drawing and ensure that your proportions are accurate.\r\n* Drawing a portrait takes time and patience. Don't rush the process, take breaks when needed, and come back to it with fresh eyes.\r\n* You can use pencils, charcoal, or even digital tools to create your portrait. Try [different](https://amzn.to/3JtItgB) materials and techniques until you find what works best for you.\r\n* Don't get too caught up in drawing the portrait perfectly and remember to enjoy the process.",
+      "created_date": "2023-03-11"
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 6,
+    "fields": {
+      "description": "Add a new adventure to your life's story by journeying to a new and uncharted place that will leave you with unforgettable memories.",
+      "tips": "* Learn about the destination's culture, customs, history, climate, and local attractions to make the most of your trip.\r\n* Decide what you want to see and do and create a rough itinerary.\r\n* Take advantage of the opportunity to try new foods, participate in local activities, and immerse yourself in the culture.\r\n* Plan for [expenses](https://amzn.to/400WtEc) ahead of time and stick to a budget to avoid overspending.",
+      "created_date": "2023-03-11"
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 7,
+    "fields": {
+      "description": "Channel your inner crafter and challenge yourself to build something beautiful and functional by taking on a new DIY project.",
+      "tips": "* Choose a project that is associated with some aspect of your life, [gather the materials](https://amzn.to/3Fg2DZ9) and make sure that you understand the instructions.\r\n* Some interesting crafts you might enjoy: Macrame, Embroidery, Clay sculpting, Paper quilling, Candle making, Woodworking, Paint pouring, etc.\r\n* Add your own personal touch to your project by using different colors, materials, or embellishments. This will make your project unique and special.\r\n* Share your finished project with friends or family. This will give you a sense of pride and accomplishment, and may inspire others to try their own crafting or DIY project.",
+      "created_date": "2023-03-11"
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 8,
+    "fields": {
+      "description": "Explore the boundless creativity of music by singing a song, letting your voice soar with the melodies and lyrics that inspire you.",
+      "tips": "* Pick a song that you enjoy listening to and are familiar with. This will make the process of learning the song more enjoyable and less frustrating.\r\n* Singing the song should be a fun and creative experience. Don't get too caught up in [singing](https://amzn.to/3ZGjfBs) the song perfectly and remember to enjoy the process.\r\n* You can ask your friends or family to sing the song in a group. This will make for a far more enjoyable and fun experience.",
+      "created_date": "2023-03-11"
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 9,
+    "fields": {
+      "description": "Discover new flavors and expand your culinary repertoire by cooking a unique recipe that you have never tried before.",
+      "tips": "* Use online websites or ask recommendations from a friend and make sure that you know all the necessary steps. \r\n* Find out the ingredients from the recipe and make sure you get them all or you have the alternatives for missing ingredients. \r\n* Make sure that you have [necessary utensils](https://amzn.to/3ZVroBG). You can also use a timer or a measuring spoon to help you cook properly. \r\n* Experiment with the recipe according to your taste and maybe you will become an inventor of a new dish.",
+      "created_date": "2023-03-11"
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 10,
+    "fields": {
+      "description": "Make a positive impact on someone's life by donating something or lending a helping hand to someone in need.",
+      "tips": "* Treat the person with dignity and respect, and maintain their privacy and confidentiality.\r\n* If you're unable to provide direct help, consider connecting the person with local organizations or resources that can provide additional support.\r\n* Consider making a monetary donation or donating goods such as clothing or household items that you don’t need anymore.\r\n* Try to understand the individual's specific needs and what would be the most helpful for them.",
+      "created_date": "2023-03-11"
+    }
+  },
+  {
+    "model": "sites.site",
+    "pk": 1,
+    "fields": {
+      "domain": "localhost:8000",
+      "name": "localhost:8000"
+    }
+  },
+  {
+    "model": "sites.site",
+    "pk": 2,
+    "fields": {
+      "domain": "8bimy49vs3.execute-api.us-east-1.amazonaws.com",
+      "name": "8bimy49vs3.execute-api.us-east-1.amazonaws.com"
+    }
+  },
+  {
+    "model": "sites.site",
+    "pk": 3,
+    "fields": {
+      "domain": "www.myxfate.com",
+      "name": "www.myxfate.com"
+    }
+  }
+]

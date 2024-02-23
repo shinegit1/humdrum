@@ -1,0 +1,93 @@
+/* These styles are used in more than one page */
+
+.whiteButton{
+    font-weight: 600;
+    color: #190326;
+    background-color: rgb(215, 200, 224);
+    font-size: 14px;
+    width: auto;
+    transition: all 0.2s ease-out;
+    text-transform: capitalize;
+    box-shadow: 3px 3px 2px #451664;
+}
+
+.purpleButton {
+    color: #fff;
+    font-weight: 600;
+    width: auto;
+    margin: 0.5em auto;
+    transition: all .2s ease-out;
+    text-transform: capitalize;
+    font-size: 16px;
+    background-color: #551c7b;
+    transition: all 0.3s ease;
+}
+.purpleButton:hover{
+    color: #190326;
+    border: 1px solid #190326;
+}
+.formButton:hover {
+    color: white;
+    border: 1px solid white;
+}
+#LockIcon, #LockIcon1, #GenericFormIcon, #GenericFormIcon1{
+    border-radius: 10px 0 0 10px;
+}
+
+#EyeIcon, #EyeIcon1{
+    border-radius: 0 10px 10px 0;
+}
+
+#ShowEye, #ShowEye2{
+    display: none;
+}
+
+#HideEye, #HideEye2{
+    display: block;
+}
+.submitDate {
+    font-family: Cambria;
+    font-weight: lighter;
+    font-size: 14px;
+}
+.flagBox{
+    width: 90%;
+    margin: auto;
+}
+.flagHead {
+    font-size: 1.2em;
+    padding: 20px;
+}
+form textarea{
+    width:90%;
+    height: 150px;
+    font-size: 14px;
+    padding: 8px;
+    border: 3px groove #71309c;
+    border-radius: 15px 15px 5px 0;
+    background-color: rgb(215, 200, 224);
+}
+
+.comment img, .childrenComments img {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+}
+.userName{
+    background-color: rgb(215, 200, 224);
+    color: #190326;
+    font-size: 16px;
+}
+.text-danger{
+    font-size: 13px;
+}
+
+@media screen and (max-width:991px) {
+    .userName {
+        font-size: 14px;
+    }
+    .flagDiv {
+        width: 100%;
+        margin: auto;
+    }
+}

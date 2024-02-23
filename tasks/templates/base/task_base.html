@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load markdown_extras %}
+{% block title %} Home | MYxFATE {% endblock title %}
+
+{% block cssfile %}
+    <link rel="stylesheet" href="{% static 'tasks/css/task_page.css' %}">
+{% endblock cssfile %}
+
+{% block message %}
+    {% include 'components/message.html' %}
+{% endblock message %}
+
+{% block content %}
+    {% if task %}
+        <div class="challenge">
+            <!--Demo task div-->
+            <div class="row">
+                <h2 class="challengeDescription">Challenge #{{ task.id }}: {{ task.description }}</h2>
+                <div class="challengeButton">  
+                    {% block uploadbtn %} {% endblock uploadbtn %}   
+                </div>
+            
+                <div class="challengeTips">
+                    <h3>Tips Here....</h3> <br>
+                    {{ task.tips | markdown | safe }}
+                </div>
+            </div>
+        </div>
+        {% block comments %} {% endblock comments %}
+
+    {% else %}
+        {% include 'tasks/error_page.html' %}
+    {% endif %}
+
+{% endblock content %}

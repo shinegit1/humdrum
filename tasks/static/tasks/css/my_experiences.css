@@ -1,0 +1,85 @@
+/* All styles use for my_experiences page */
+
+#Experience {
+    margin: 2.2em auto;
+    height: auto;
+    width: 90%;
+    display: block;
+    border: 1px solid #572477;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#Experience a, #Experience a:active {
+    text-decoration: none;
+    color:  rgb(215, 200, 224);
+}
+
+#Experience a:hover {
+    text-decoration: underline;
+    color: rgb(169, 166, 170);
+}
+
+#MediaBox {
+    margin: auto;
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textFileData {
+    font-weight: lighter;
+    padding: 10px;
+    border: 1px groove gray;
+    border-radius: 5px;
+    line-height: 1.8em;
+}
+
+.mediaData {
+    width: auto;
+    height: auto;
+    margin: auto;
+    position: relative;
+    padding: 10px;
+}
+
+.mediaData img, video {
+    max-width: 100vh;
+    max-height: 100vh;
+    width: 100%;
+    position: relative;
+    border: 2px groove gray;
+    margin: auto;
+}
+
+.audioData {
+    width: 60%;
+    margin: 10px;
+    position: relative;
+}
+
+#PaginationDiv {
+    margin: auto;
+    padding: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    #Experience {
+        width: 96%;
+    }
+
+    #MediaBox {
+        padding: 10px 0;
+    }
+
+    .mediaData img, video {
+        max-width: 100vh;
+        max-height: 100vh;
+    }
+
+    .audioData {
+        width: 90%;
+    }
+}

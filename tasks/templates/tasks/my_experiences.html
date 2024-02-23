@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load markdown_extras %}
+{% block title %} My Experiences | MYxFATE {% endblock title %}
+{% block cssfile %}
+    <link rel="stylesheet" href="{% static 'tasks/css/my_experiences.css' %}">
+{% endblock cssfile %}
+{% block message %}
+    {% include 'components/message.html' %}
+{% endblock message %}
+{% block content %}
+    {% for task_data in user_experiences %}
+        <div class="row" id="Experience">
+            <p class="submitDate">{{ task_data.submitted_date }}</p>
+            <h3><a href=" {% url 'tasks:Taskboard' task_data.task_id.id %} "># {{ task_data.task_id.description }}</a></h3>
+            <div id="MediaBox">
+                {% if task_data.file_type == 'TEXT' %}
+                    <p class="textFileData">{{ task_data.file_data }}</p>
+
+                {% elif task_data.file_type == 'IMAGE' %}
+                    <div class="mediaData">
+                        <img src="{{ task_data.file_data }}" alt="image"/>
+                    </div>
+
+                {% elif task_data.file_type == 'AUDIO' %}
+                    <audio controls class="audioData">
+                        <source src="{{ task_data.file_data }}">
+                    </audio>
+
+                {% elif task_data.file_type == 'VIDEO' %}
+                    <div class="mediaData">
+                        <video controls>
+                            <source src="{{ task_data.file_data }}">
+                        </video>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="row" id="PaginationDiv">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1" class="btn whiteButton">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}" class="btn whiteButton">previous</a>
+                {% endif %}
+
+                <span class="currentPage">
+                   &nbsp; Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="btn whiteButton">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}"
+                       class="btn whiteButton">last &raquo;</a>
+                {% endif %}
+            </span>
+    </div>
+
+{% endblock content %}

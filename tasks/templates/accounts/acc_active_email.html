@@ -1,0 +1,5 @@
+{% autoescape off %}
+Hi {{ user.username }},
+    Please click on the link to confirm your account registration,
+https://{{domain}}{% url 'tasks:ActivatePage' uidb64=uid token=token %}
+{% endautoescape %}

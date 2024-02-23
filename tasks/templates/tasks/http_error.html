@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Error Page | MYxFATE {% endblock title %}
+{% block cssfile %}
+<link rel="stylesheet" href="{% static 'tasks/css/http_error.css' %}">
+{% endblock cssfile %}
+{% block content %}
+    <div class="containter">
+        <div class="errorDiv">
+            <h1>Sorry!! Something went wrong... <i class="fa-solid fa-face-frown"></i></i></h1> <br>
+            <p class="errorDescription">We will fix the error as soon as possible. </p>
+        </div>
+    </div>
+{% endblock content %}

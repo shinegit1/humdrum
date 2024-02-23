@@ -1,0 +1,134 @@
+# This workflow will install Python dependencies, run tests with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+name: Humdrum CI/CD
+on: [push]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+          cache: 'pip' # caching pip dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Run migrations
+        run: |
+          python manage.py migrate
+      - name: Test with pytest
+        run: |
+          pytest
+
+  development:
+    # this job will only run if the PR has been merged
+    runs-on: ubuntu-latest
+    needs: [ tests ]
+    if:
+      contains('refs/heads/develop', github.ref )
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+          cache: 'pip' # caching pip dependencies
+      - name: Create and start virtual environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+      - name: Install dependencies
+        run: |
+          source venv/bin/activate
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: update for dev
+        run: |
+          source venv/bin/activate
+          zappa update dev
+      - name: verify static files
+        id: static-files
+        uses: tj-actions/changed-files@v23
+        with:
+          files: |
+            **/static/**
+      - name: Run step only when any of the above static files changed.
+        if: steps.static-files.outputs.any_modified == 'true'
+        run: |
+          source venv/bin/activate
+          zappa manage dev "collectstatic --noinput"
+      - name: Run migrations for dev
+        id: migration-files
+        uses: tj-actions/changed-files@v23
+        with:
+          files: |
+            tasks/migrations/**.py
+      - name: Run step only when any of the migration files created.
+        if: steps.migration-files.outputs.any_modified == 'true'
+        run: |
+          source venv/bin/activate
+          zappa manage dev migrate
+
+  production:
+    # this job will only run if the PR has been merged
+    runs-on: ubuntu-latest
+    needs: [ tests ]
+    if:
+      contains('refs/heads/main', github.ref )
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+          cache: 'pip' # caching pip dependencies
+      - name: Create and start virtual environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+      - name: Install dependencies
+        run: |
+          source venv/bin/activate
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: update for prod
+        run: |
+          source venv/bin/activate
+          zappa update prod
+      - name: verify static files
+        id: static-files
+        uses: tj-actions/changed-files@v23
+        with:
+          files: |
+            **/static/**
+      - name: Run step only when any of the above static files changed.
+        if: steps.static-files.outputs.any_modified == 'true'
+        run: |
+          source venv/bin/activate
+          zappa manage prod "collectstatic --noinput"
+      - name: Run migrations for prod
+        id: migration-files
+        uses: tj-actions/changed-files@v23
+        with:
+          files: |
+            tasks/migrations/**.py
+      - name: Run step only when any of the migration files created.
+        if: steps.migration-files.outputs.any_modified == 'true'
+        run: |
+          source venv/bin/activate
+          zappa manage prod migrate

@@ -1,0 +1,6 @@
+{% if messages %}
+{% for msg in messages %}
+<p {% if msg.tags %} class="alert alert-{{msg.tags}} mb-5" {% endif %} id="MessageNotification">
+    <i class="fa-regular fa-circle-check"></i> {{msg}} </p>
+{% endfor %}
+{% endif %}
